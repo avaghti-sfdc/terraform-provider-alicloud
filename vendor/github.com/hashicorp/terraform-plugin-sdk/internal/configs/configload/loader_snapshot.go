@@ -305,6 +305,10 @@ func (fs snapshotFS) Stat(name string) (os.FileInfo, error) {
 	}, nil
 }
 
+func (fs snapshotFS) Chown(name string, uid, gid int) error {
+	return fmt.Errorf("unsupported")
+}
+
 func (fs snapshotFS) Name() string {
 	return "ConfigSnapshotFS"
 }

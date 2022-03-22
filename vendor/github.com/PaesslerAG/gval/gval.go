@@ -16,11 +16,16 @@ import (
 
 //Evaluate given parameter with given expression in gval full language
 func Evaluate(expression string, parameter interface{}, opts ...Language) (interface{}, error) {
+	return EvaluateWithContext(context.Background(), expression, parameter, opts...)
+}
+
+//Evaluate given parameter with given expression in gval full language using a context
+func EvaluateWithContext(c context.Context, expression string, parameter interface{}, opts ...Language) (interface{}, error) {
 	l := full
 	if len(opts) > 0 {
 		l = NewLanguage(append([]Language{l}, opts...)...)
 	}
-	return l.Evaluate(expression, parameter)
+	return l.EvaluateWithContext(c, expression, parameter)
 }
 
 // Full is the union of Arithmetic, Bitmask, Text, PropositionalLogic, and Json
@@ -77,6 +82,16 @@ func JSON() Language {
 	return ljson
 }
 
+// Parentheses contains support for parentheses.
+func Parentheses() Language {
+	return parentheses
+}
+
+// Ident contains support for variables and functions.
+func Ident() Language {
+	return ident
+}
+
 // Base contains equal (==) and not equal (!=), perentheses and general support for variables, constants and functions
 // It contains true, false, (floating point) number, string  ("" or ``) and char ('') constants
 func Base() Language {
@@ -88,10 +103,11 @@ var full = NewLanguage(arithmetic, bitmask, text, propositionalLogic, ljson,
 	InfixOperator("in", inArray),
 
 	InfixShortCircuit("??", func(a interface{}) (interface{}, bool) {
-		return a, a != false && a != nil
+		v := reflect.ValueOf(a)
+		return a, a != nil && !v.IsZero()
 	}),
 	InfixOperator("??", func(a, b interface{}) (interface{}, error) {
-		if a == false || a == nil {
+		if v := reflect.ValueOf(a); a == nil || v.IsZero() {
 			return b, nil
 		}
 		return a, nil
@@ -205,6 +221,14 @@ var propositionalLogic = NewLanguage(
 	base,
 )
 
+var parentheses = NewLanguage(
+	PrefixExtension('(', parseParentheses),
+)
+
+var ident = NewLanguage(
+	PrefixMetaPrefix(scanner.Ident, parseIdent),
+)
+
 var base = NewLanguage(
 	PrefixExtension(scanner.Int, parseNumber),
 	PrefixExtension(scanner.Float, parseNumber),
@@ -225,7 +249,7 @@ var base = NewLanguage(
 
 	InfixOperator("==", func(a, b interface{}) (interface{}, error) { return reflect.DeepEqual(a, b), nil }),
 	InfixOperator("!=", func(a, b interface{}) (interface{}, error) { return !reflect.DeepEqual(a, b), nil }),
-	PrefixExtension('(', parseParentheses),
+	parentheses,
 
 	Precedence("??", 0),
 
@@ -258,5 +282,5 @@ var base = NewLanguage(
 
 	Precedence("**", 200),
 
-	PrefixMetaPrefix(scanner.Ident, parseIdent),
+	ident,
 )

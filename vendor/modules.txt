@@ -1067,7 +1067,7 @@ k8s.io/klog/v2/internal/buffer
 k8s.io/klog/v2/internal/clock
 k8s.io/klog/v2/internal/serialize
 k8s.io/klog/v2/internal/severity
-# k8s.io/kube-openapi v0.0.0-20220323210520-29d726468e05
+# k8s.io/kube-openapi v0.0.0-20220324211241-9f9c01d62a3a
 ## explicit; go 1.16
 k8s.io/kube-openapi/pkg/schemaconv
 k8s.io/kube-openapi/pkg/util/proto
@@ -1092,10 +1092,10 @@ sigs.k8s.io/structured-merge-diff/v4/value
 ## explicit; go 1.12
 sigs.k8s.io/yaml
 # github.com/googleapis/gnostic v0.5.6 => github.com/googleapis/gnostic v0.5.5
-# github.com/hashicorp/terraform-exec => ./local/terraform-exec
+# github.com/aliyun/alibaba-cloud-sdk-go => ./local/alibaba-cloud-sdk-go
 # github.com/hashicorp/terraform-plugin-sdk => ./local/terraform-plugin-sdk
 # k8s.io/client-go => ./local/client-go
-# github.com/aliyun/alibaba-cloud-sdk-go => ./local/alibaba-cloud-sdk-go
+# github.com/hashicorp/terraform-exec => ./local/terraform-exec
 # golang.org/x/text => golang.org/x/text v0.3.7
 # github.com/miekg/dns => github.com/miekg/dns v1.1.43
 # github.com/nats-io/nats-server/v2 => github.com/nats-io/nats-server/v2 v2.5.0

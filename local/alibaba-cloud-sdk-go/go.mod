@@ -1,5 +1,7 @@
 module github.com/aliyun/alibaba-cloud-sdk-go
 
+replace golang.org/x/text => golang.org/x/text v0.3.7
+
 require (
 	github.com/goji/httpauth v0.0.0-20160601135302-2da839ab0f4d
 	github.com/jmespath/go-jmespath v0.0.0-20180206201540-c2b33e8439af

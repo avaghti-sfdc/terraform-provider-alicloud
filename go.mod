@@ -14,7 +14,7 @@ replace golang.org/x/text => golang.org/x/text v0.3.7
 
 replace github.com/miekg/dns => github.com/miekg/dns v1.1.43
 
-replace github.com/nats-io/nats-server/v2 => github.com/nats-io/nats-server/v2 v2.5.0
+replace github.com/nats-io/nats-server/v2 => github.com/nats-io/nats-server/v2 v2.7.4
 
 replace github.com/aws/aws-sdk-go => github.com/aws/aws-sdk-go v1.43.23
 
@@ -23,6 +23,8 @@ replace github.com/gogo/protobuf => github.com/gogo/protobuf v1.3.2
 replace github.com/prometheus/client_golang => github.com/prometheus/client_golang v1.11.1
 
 replace github.com/nats-io/jwt => github.com/nats-io/jwt v1.2.2
+
+replace github.com/go-ldap/ldap/v3 => github.com/go-ldap/ldap/v3 v3.4.2
 
 require (
 	github.com/PaesslerAG/jsonpath v0.1.1

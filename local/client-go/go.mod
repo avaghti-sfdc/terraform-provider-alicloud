@@ -15,6 +15,7 @@ require (
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da
 	github.com/golang/protobuf v1.5.2
 	github.com/google/btree v1.0.1 // indirect
+	github.com/google/gnostic v0.6.7
 	github.com/google/go-cmp v0.5.5
 	github.com/google/gofuzz v1.1.0
 	github.com/google/uuid v1.1.2
@@ -40,6 +41,7 @@ require (
 )
 
 replace (
+	golang.org/x/text => golang.org/x/text v0.3.7
 	k8s.io/api => k8s.io/api v0.23.5
 	k8s.io/apimachinery => k8s.io/apimachinery v0.23.5
 )

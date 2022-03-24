@@ -2,6 +2,12 @@ module github.com/hashicorp/terraform-exec
 
 go 1.14
 
+replace (
+	github.com/aws/aws-sdk-go => github.com/aws/aws-sdk-go v1.37.33
+	github.com/ulikunitz/xz => github.com/ulikunitz/xz v0.5.8
+	golang.org/x/text => golang.org/x/text v0.3.7
+)
+
 require (
 	github.com/andybalholm/crlf v0.0.0-20171020200849-670099aa064f
 	github.com/go-git/go-git/v5 v5.4.2

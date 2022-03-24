@@ -2,6 +2,12 @@ module github.com/hashicorp/terraform-plugin-sdk
 
 go 1.12
 
+replace (
+	github.com/aws/aws-sdk-go => github.com/aws/aws-sdk-go v1.37.33
+	github.com/ulikunitz/xz => github.com/ulikunitz/xz v0.5.8
+	golang.org/x/text => golang.org/x/text v0.3.7
+)
+
 require (
 	github.com/agext/levenshtein v1.2.2
 	github.com/agl/ed25519 v0.0.0-20170116200512-5312a6153412 // indirect

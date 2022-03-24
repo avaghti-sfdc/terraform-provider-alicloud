@@ -246,7 +246,7 @@ github.com/denverdino/aliyungo/util
 # github.com/fatih/color v1.13.0
 ## explicit; go 1.13
 github.com/fatih/color
-# github.com/go-kit/kit v0.12.0
+# github.com/go-kit/kit v0.12.0 => github.com/go-kit/kit v0.12.0
 ## explicit; go 1.17
 github.com/go-kit/kit/log
 github.com/go-kit/kit/log/level
@@ -1102,5 +1102,6 @@ sigs.k8s.io/yaml
 # github.com/aws/aws-sdk-go => github.com/aws/aws-sdk-go v1.43.23
 # github.com/gogo/protobuf => github.com/gogo/protobuf v1.3.2
 # github.com/prometheus/client_golang => github.com/prometheus/client_golang v1.11.1
-# github.com/nats-io/jwt => github.com/nats-io/jwt v1.2.2
 # github.com/go-ldap/ldap/v3 => github.com/go-ldap/ldap/v3 v3.4.2
+# github.com/go-kit/kit => github.com/go-kit/kit v0.12.0
+# github.com/nats-io/jwt/v2 => github.com/nats-io/jwt/v2 v2.2.0

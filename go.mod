@@ -22,9 +22,11 @@ replace github.com/gogo/protobuf => github.com/gogo/protobuf v1.3.2
 
 replace github.com/prometheus/client_golang => github.com/prometheus/client_golang v1.11.1
 
-replace github.com/nats-io/jwt => github.com/nats-io/jwt v1.2.2
-
 replace github.com/go-ldap/ldap/v3 => github.com/go-ldap/ldap/v3 v3.4.2
+
+replace github.com/go-kit/kit => github.com/go-kit/kit v0.12.0
+
+replace github.com/nats-io/jwt/v2 => github.com/nats-io/jwt/v2 v2.2.0
 
 require (
 	github.com/PaesslerAG/jsonpath v0.1.1
